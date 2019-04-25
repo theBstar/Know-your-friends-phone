@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="index.css">
+  <title>Finder</title>
+</head>
+
+<body>
+  <nav>
+    <div>
+      Welcome!
+    </div>
+  </nav>
+  <main>
+    <section class="card url-generator">
+      <form action="/genUrl" method="post" id="gen-form">
+        <input type="url" name="url" id="url" placeholder="Enter the URL" required />
+        <input type="text" name="name" id="name" placeholder="Name of the person" required />
+        <input type="submit" class="btn" value="Genarate Link" />
+        <input type="text" class="share-url hide" readonly/>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" defer>
+      </form>
+    </section>
+    <section class="share-table">
+      <div class="card personDataTemplate" hidden>
+        <div class="container">
+          <div class="person">
+            Ram
+          </div>
+          <div class="date">
+            12.02.13
+          </div>
+          <div class="device">
+            Redmi 6
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+
+</html>
