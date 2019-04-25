@@ -36,7 +36,7 @@ app.use(express.static(path.join(__dirname, './views')));
 
 app.get('/secret', (req, res) => {
   writeToConsole('Get request on /secret');
-  res.sendFile(path.join(__dirname, './views/index.html'));
+  res.sendFile(path.join(__dirname, './views/secret.html'));
 });
 
 app.get('/personData', async (req, res) => {
@@ -86,6 +86,11 @@ app.get('/share/:id', async (req, res) => {
   await PersonData.updateOne({ _id: id }, {
     $set: { visitedDate: new Date(), device },
   });
+});
+
+app.get('/', (req, res) => {
+  writeToConsole('Someone tried to get the home route');
+  res.sendFile(path.join(__dirname, './views/index.html'));
 });
 
 app.listen(PORT, () => {
